@@ -212,3 +212,21 @@ h1 {
   background-color: #ff152d;
   border-color: #ff152d;
 }
+
+/* about */
+
+.about h1 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.background-image-holder {
+    background: url(../img/Baker.jpg) 50% 0% no-repeat;
+    width: 425px;
+    height: 100%;
+    z-index: 0;
+    background-size: cover !important;
+    top: -20%;
+}
