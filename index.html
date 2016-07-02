@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="CakekoModule">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +9,115 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Muli" rel="stylesheet">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link href="css/custom.css" rel="stylesheet">
+  <script src="js/angular.js"></script>
 </head>
 <body>
+  <script>
+  // create angular module
+  var cakekoModule = angular.module("CakekoModule", []);
+  // create controller inside the module
+  cakekoModule.controller("ProductsController", function($scope)
+  {
+    $scope.Products =
+    [
+      { name: 'Pina Colada', category: 'Cupcakes', is_favorite: false },
+      { name: 'Strawberry Daiquiri', category: 'Cupcakes', is_favorite: false },
+      { name: 'Raspberry Lemon Drop', category: 'Cupcakes', is_favorite: false },
+      { name: 'White Russian', category: 'Cupcakes', is_favorite: false },
+      { name: 'Strawberry Shortcake', category: 'Cupcakes', is_favorite: true },
+      { name: "Pancake'n Bacon", category: 'Cupcakes', is_favorite: true },
+      { name: 'Black Forest', category: 'Cupcakes', is_favorite: false },
+      { name: 'Chocolate Peanut Butter Cup', category: 'Cupcakes', is_favorite: false },
+      { name: 'Zinger', category: 'Cupcakes', is_favorite: false },
+      { name: 'Blueberry Pancake', category: 'Cupcakes', is_favorite: false },
+      { name: "Blueberry Pancake 'n Bacon", category: 'Cupcakes', is_favorite: false },
+      { name: 'Luscious Lemonade', category: 'Cupcakes', is_favorite: false },
+      { name: "S'mores", category: 'Cupcakes', is_favorite: false },
+      { name: 'Mint Chocolate Chip', category: 'Cupcakes', is_favorite: false },
+      { name: 'Fruit Basket', category: 'Cupcakes', is_favorite: false },
+      { name: 'Banana Cream Pie', category: 'Cupcakes', is_favorite: false },
+      { name: 'Pineapple Upside Down', category: 'Cupcakes', is_favorite: false },
+      { name: 'Banana Split', category: 'Cupcakes', is_favorite: false },
+      { name: 'Vanilla Bean & Toasted Coconut', category: 'Cupcakes', is_favorite: false },
+      { name: 'Jessica Rabbit Carrot Cake', category: 'Cupcakes', is_favorite: false },
+      { name: 'Lemon Meringue', category: 'Cupcakes', is_favorite: false },
+      { name: 'Raspberry Beret', category: 'Cupcakes', is_favorite: false },
+      { name: 'Blueberry Lemonade', category: 'Cupcakes', is_favorite: false },
+      { name: 'Bling Bling Peach', category: 'Cupcakes', is_favorite: false },
+      { name: 'Chubby Elvis', category: 'Cupcakes', is_favorite: false },
+      { name: 'Stuffed French Toast', category: 'Cupcakes', is_favorite: false },
+      { name: 'Red Velvet Cheesecake', category: 'Cupcakes', is_favorite: false },
+      { name: 'Boston Cream Pie', category: 'Cupcakes', is_favorite: false },
+      { name: 'PMS Cupcake', category: 'Cupcakes', is_favorite: false },
+      { name: 'Cirque de Cupcake', category: 'Cupcakes', is_favorite: false },
+      { name: 'Chai Tea Cupcake', category: 'Cupcakes', is_favorite: false },
+      { name: 'Drama Queen Cupcake', category: 'Cupcakes', is_favorite: false },
+      { name: 'Sassy Spumoni', category: 'Cupcakes', is_favorite: false },
+      { name: 'Crazy 4 Coconut', category: 'Cupcakes', is_favorite: false },
+      { name: 'Salted Caramel Apple', category: 'Cupcakes', is_favorite: false },
+      { name: "Apple Pie a'la mode", category: 'Cupcakes', is_favorite: false },
+      { name: 'Chocolate Oreo Explosion', category: 'Cupcakes', is_favorite: false },
+      { name: 'Creamy Mango', category: 'Cupcakes', is_favorite: false },
+      { name: 'Funky Monkey', category: 'Cupcakes', is_favorite: false },
+      { name: 'White Chocolate and Macadamia Nut', category: 'Cupcakes', is_favorite: false },
+      { name: 'Vanilla Bean', category: 'Cupcakes', is_favorite: false },
+      { name: 'Ebony and Ivory', category: 'Cupcakes', is_favorite: false },
+      { name: 'German Chocolate', category: 'Cupcakes', is_favorite: false },
+      { name: 'Gluten-Free Chocolate', category: 'Cupcakes', is_favorite: false },
+      { name: 'Classic Beauty', category: 'Cupcakes', is_favorite: false },
+      { name: 'Orange Creamsicle', category: 'Cupcakes', is_favorite: false }
+    ]
+  });
+
+  cakekoModule.controller("NavigationController", function($scope, $rootScope)
+  {
+    $rootScope.viewName = 'home';
+    $scope.goTo = function(destination){
+      $rootScope.viewName = destination;
+    }
+  });
+
+  cakekoModule.controller("HomesController", function($scope)
+  {
+  });
+
+  cakekoModule.controller("AboutController", function($scope)
+  {
+  });
+
+  cakekoModule.controller("MenuController", function($scope)
+  {
+
+  });
+
+  cakekoModule.controller("WeddingsController", function($scope)
+  {
+
+  });
+
+  cakekoModule.controller("PricesController", function($scope)
+  {
+
+  });
+
+  cakekoModule.controller("ContactsController", function($scope)
+  {
+
+  });
+
+  cakekoModule.controller("EventsController", function($scope)
+  {
+
+  });
+
+  cakekoModule.controller("PressController", function($scope)
+  {
+
+  });
+
+  </script>
   <!-- Navigation Links -->
-  <nav class="navbar navbar-default">
+  <nav ng-controller="NavigationController" class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -22,24 +127,24 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#" ng-click="goTo('home')">
           CakeKo Gourmet﻿﻿﻿﻿
         </a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Weddings</a></li>
-          <li><a href="#">Cupcakes and Cakes</a></li>
-          <li><a href="#">Prices</a></li>
+          <li><a href="#" ng-click="goTo('about')">About</a></li>
+          <li><a href="#" ng-click="goTo('menu')">Menu</a></li>
+          <li><a href="#" ng-click="goTo('weddings')">Weddings</a></li>
+          <li><a href="#" ng-click="goTo('cupcakes')">Cupcakes</a></li>
+          <li><a href="#" ng-click="goTo('prices')">Prices</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Events & Catering</a></li>
-              <li><a href="#">Press</a></li>
+              <li><a href="#" ng-click="goTo('contact')">Contact Us</a></li>
+              <li><a href="#" ng-click="goTo('events')">Events & Catering</a></li>
+              <li><a href="#" ng-click="goTo('press')">Press</a></li>
             </ul>
           </li>
         </ul>
@@ -47,7 +152,42 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <div ng-controller="HomesController" ng-show="viewName === 'home'" class="container">
+  </div>
+
+  <div ng-controller="AboutController" ng-show="viewName === 'about'" class="container">
+    <h1>About CakeKo Gourmet</h1>
+  </div>
+
+  <div ng-controller="MenuController" ng-show="viewName === 'menu'" class="container">
+    <h1>Food and Drink Menu</h1>
+  </div>
+
+  <div ng-controller="WeddingsController" ng-show="viewName === 'weddings'" class="container">
+    <h1>Weddings</h1>
+  </div>
+
+  <div ng-controller="ProductsController" ng-show="viewName === 'cupcakes'" class="container">
+    <h1>Cupcakes</h1>
+  </div>
+
+  <div ng-controller="PricesController" ng-show="viewName === 'prices'" class="container">
+    <h1>Prices & Flavors</h1>
+  </div>
+
+  <div ng-controller="ContactsController" ng-show="viewName === 'contact'" class="container">
+    <h1>Contact Us</h1>
+  </div>
+
+  <div ng-controller="EventsController" ng-show="viewName === 'events'" class="container">
+    <h1>Events & Catering</h1>
+  </div>
+
+  <div ng-controller="PressController" ng-show="viewName === 'press'" class="container">
+    <h1>Press</h1>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
