@@ -8,6 +8,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Muli" rel="stylesheet">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link href="css/custom.css" rel="stylesheet">
   <script src="js/angular.js"></script>
 </head>
@@ -147,12 +148,75 @@
               <li><a href="#" ng-click="goTo('press')">Press</a></li>
             </ul>
           </li>
+          <li><a href="#" ng-click="goTo('login')">Login</a></li>
+          <li><a href="#" ng-click="goTo('signup')">Sign Up</a></li>
+          <li><a href="#" ng-click="goTo('signout')">Sign Out</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div ng-controller="HomesController" ng-show="viewName === 'home'" class="container">
+  <div ng-controller="HomesController" ng-show="viewName === 'home'" class="home-content">
+    <!-- Start of Carousel -->
+      <div id="homeCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <!-- First slide -->
+          <div class="item active lightgray">
+            <div class="carousel-caption">
+              <h3 class="animated bounceInLeft">
+                YOUR NEXT MEETING COULD BE A PARTY
+              </h3>
+              <h3 class="animated bounceInRight">
+                Cupcake Treats Now Available!
+              </h3>
+              <button class="btn btn-primary btn-lg animated zoomInUp">ORDER NOW</button>
+            </div>
+          </div> <!-- /.item -->
+          <!-- Second slide -->
+          <div class="item rose">
+            <div class="carousel-caption">
+              <h3 class="icon-container animated bounceInDown">
+                <span class="glyphicon glyphicon-heart"></span>
+              </h3>
+              <h3 class="animated bounceInUp">
+                Make Any Occasion a Special Occasion
+              </h3>
+              <button class="btn btn-primary btn-lg animated zoomInRight">VISIT NOW</button>
+            </div>
+          </div><!-- /.item -->
+          <!-- Third slide -->
+          <div class="item sand">
+            <div class="carousel-caption">
+              <h3 class="icon-container animated zoomInLeft">
+                <span class="glyphicon glyphicon-glass"></span>
+              </h3>
+              <h3 class="animated flipInX">
+                The best way to celebrate the ones you love!
+              </h3>
+              <button class="btn btn-primary btn-lg animated lightSpeedIn">LEARN MORE</button>
+            </div>
+          </div><!-- /.item -->
+        </div><!-- /.carousel-inner -->
+        <!-- Next Control-->
+        <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <!-- Previous Control-->
+        <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+      </div>
+    <!-- End of Carousel -->
   </div>
 
   <div ng-controller="AboutController" ng-show="viewName === 'about'" class="container">
@@ -189,5 +253,6 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
 </body>
 </html>
