@@ -89,33 +89,33 @@
       { name: 'Brewed Coffee', small: 3.55, medium: 4.25, large: 4.75 }
     ]﻿
 
-    $scope.Drinks = [
+    $scope.Beverages = [
       { name: 'Soda Can', onesize: 1.25 },
       { name: 'Apple Juice', onesize: 2.00 },
       { name: 'Milk', onesize: 1.00 },
       { name: 'Chocolate Milk', onesize: 1.75 },
-      { name: 'Jolly Rancher Sodas', onesize: 1.50 },
-      { name: 'Fruit Smoothies', medium: 3.25, large: 4.25 },
-      { name: 'CakeKo Freeze', medium: 4.25, large: 4.95 },
+      { name: 'Jolly Rancher Sodas', onesize: 1.50 }
     ]
 
     $scope.Foods = [
-      breakfast: [
+      {
+        breakfast:[
         { name: 'Breakfast Burrito', description: 'Egg, cheese, seasoned potatoes, choice of meat (ham, bacon or sausage) stuffed in a flour tortilla (Grilled)'},
         { name: 'Breakfast Sandwich', description: 'Egg, cheese, choice of meat (bacon, sausage or ham) on a bagel, croissant or toast'},
         { name: 'Yogurt Parfait', description: 'Low-fat yogurt topped with berry blend and granola'}
-      ],
-      sandwiches: [
+        ],
+        sandwiches:[
         { name: 'El Cubano', description: 'Havarti cheese, sliced ham, slow roasted pork, mayo, mustard, pickles and our house-made garlic mojo on a white or wheat roll (Grilled)'},
         { name: 'The Cali Chick', description: 'Grilled chicken breast, mozzarella cheese, pesto, lettuce, tomato and our house-made garlic mojo on a roll on a white or wheat roll (Grilled)'},
         { name: 'The CakeKo Club', description: 'Slices of ham, turkey and bacon, mayo, lettuce and tomatoes on white or wheat toast'},
         { name: 'Grilled Cheese', description: 'Your choice of cheese on white or wheat bread, grilled to perfection'},
         { name: 'BLT', description: 'Crispy bacon, lettuce, tomatoes and mayo on white or wheat toast'}
-      ]
-      salads: [
+        ],
+        salads:[
         { name: 'Chinese Chicken Salad', description: 'Sliced grilled chicken breast, chopped almonds and crunchy chow mein noodles on a generous bed of field greens and shredded cabbage, served with our toasted sesame dressing'},
         { name: 'Garden Salad', description: 'Field greens, cherry tomatoes, cucumbers, croutons and mozzarella cheese, served with choice of dressing'}
-      ]
+        ]
+      }
     ]
   });
 
@@ -265,6 +265,31 @@
 
   <div ng-controller="MenuController" ng-show="viewName === 'menu'" class="container">
     <h1>Food and Drink Menu</h1>
+    <p class='text-center'>WE CATER!! Small or Large, we do it all. Contact us for catering pricing 925-432-2253</p>
+    <h2 class='text-center'>Espresso / Coffee Bar﻿</h2>
+    <table class='table'>
+    <caption class='text-center'>Available iced or hot, with decaf, skim, or soy milk. Add an extra shot of espresso for .75</caption>
+      <tr>
+        <td></td>
+        <th scope='col'>Small 12oz.</th>
+        <th scope='col'>Medium 16oz.</th>
+        <th scope='col'>Large 20oz.</th>
+      </tr>
+      <tr ng-repeat="espresso in Espressos">
+        <th scope='row'>{{ espresso.name }}</th>
+        <td>{{ espresso.small | currency }}</td>
+        <td>{{ espresso.medium | currency }}</td>
+        <td>{{ espresso.large | currency }}</td>
+      </tr>
+    </table>
+
+    <h2>Drinks</h2>
+    <h3>Beverages</h3>
+    <div ng-repeat="beverage in Beverages">
+      <strong> {{ beverage.name }}</strong>
+      <p> {{ beverage.onesize | currency }}</p>
+    </div>
+
   </div>
 
   <div ng-controller="WeddingsController" ng-show="viewName === 'weddings'" class="container">
