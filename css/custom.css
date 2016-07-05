@@ -222,11 +222,8 @@ h1 {
   font-weight: bold;
 }
 
-.background-image-holder {
-    background: url(../img/Baker.jpg) 50% 0% no-repeat;
-    width: 425px;
-    height: 100%;
-    z-index: 0;
-    background-size: cover !important;
-    top: -20%;
+.gallery
+{
+    display: inline-block;
+    margin-top: 20px;
 }

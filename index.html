@@ -7,6 +7,9 @@
   <title>CakeKo</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Muli" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  <script src="js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/animate.css">
   <link href="css/custom.css" rel="stylesheet">
@@ -21,52 +24,35 @@
   {
     $scope.Products =
     [
-      { name: 'Pina Colada', category: 'Cupcakes', is_favorite: false },
-      { name: 'Strawberry Daiquiri', category: 'Cupcakes', is_favorite: false },
-      { name: 'Raspberry Lemon Drop', category: 'Cupcakes', is_favorite: false },
-      { name: 'White Russian', category: 'Cupcakes', is_favorite: false },
-      { name: 'Strawberry Shortcake', category: 'Cupcakes', is_favorite: true },
-      { name: "Pancake'n Bacon", category: 'Cupcakes', is_favorite: true },
-      { name: 'Black Forest', category: 'Cupcakes', is_favorite: false },
-      { name: 'Chocolate Peanut Butter Cup', category: 'Cupcakes', is_favorite: false },
-      { name: 'Zinger', category: 'Cupcakes', is_favorite: false },
-      { name: 'Blueberry Pancake', category: 'Cupcakes', is_favorite: false },
-      { name: "Blueberry Pancake 'n Bacon", category: 'Cupcakes', is_favorite: false },
-      { name: 'Luscious Lemonade', category: 'Cupcakes', is_favorite: false },
-      { name: "S'mores", category: 'Cupcakes', is_favorite: false },
-      { name: 'Mint Chocolate Chip', category: 'Cupcakes', is_favorite: false },
-      { name: 'Fruit Basket', category: 'Cupcakes', is_favorite: false },
-      { name: 'Banana Cream Pie', category: 'Cupcakes', is_favorite: false },
-      { name: 'Pineapple Upside Down', category: 'Cupcakes', is_favorite: false },
-      { name: 'Banana Split', category: 'Cupcakes', is_favorite: false },
-      { name: 'Vanilla Bean & Toasted Coconut', category: 'Cupcakes', is_favorite: false },
-      { name: 'Jessica Rabbit Carrot Cake', category: 'Cupcakes', is_favorite: false },
-      { name: 'Lemon Meringue', category: 'Cupcakes', is_favorite: false },
-      { name: 'Raspberry Beret', category: 'Cupcakes', is_favorite: false },
-      { name: 'Blueberry Lemonade', category: 'Cupcakes', is_favorite: false },
-      { name: 'Bling Bling Peach', category: 'Cupcakes', is_favorite: false },
-      { name: 'Chubby Elvis', category: 'Cupcakes', is_favorite: false },
-      { name: 'Stuffed French Toast', category: 'Cupcakes', is_favorite: false },
-      { name: 'Red Velvet Cheesecake', category: 'Cupcakes', is_favorite: false },
-      { name: 'Boston Cream Pie', category: 'Cupcakes', is_favorite: false },
-      { name: 'PMS Cupcake', category: 'Cupcakes', is_favorite: false },
-      { name: 'Cirque de Cupcake', category: 'Cupcakes', is_favorite: false },
-      { name: 'Chai Tea Cupcake', category: 'Cupcakes', is_favorite: false },
-      { name: 'Drama Queen Cupcake', category: 'Cupcakes', is_favorite: false },
-      { name: 'Sassy Spumoni', category: 'Cupcakes', is_favorite: false },
-      { name: 'Crazy 4 Coconut', category: 'Cupcakes', is_favorite: false },
-      { name: 'Salted Caramel Apple', category: 'Cupcakes', is_favorite: false },
-      { name: "Apple Pie a'la mode", category: 'Cupcakes', is_favorite: false },
-      { name: 'Chocolate Oreo Explosion', category: 'Cupcakes', is_favorite: false },
-      { name: 'Creamy Mango', category: 'Cupcakes', is_favorite: false },
-      { name: 'Funky Monkey', category: 'Cupcakes', is_favorite: false },
-      { name: 'White Chocolate and Macadamia Nut', category: 'Cupcakes', is_favorite: false },
-      { name: 'Vanilla Bean', category: 'Cupcakes', is_favorite: false },
-      { name: 'Ebony and Ivory', category: 'Cupcakes', is_favorite: false },
-      { name: 'German Chocolate', category: 'Cupcakes', is_favorite: false },
-      { name: 'Gluten-Free Chocolate', category: 'Cupcakes', is_favorite: false },
-      { name: 'Classic Beauty', category: 'Cupcakes', is_favorite: false },
-      { name: 'Orange Creamsicle', category: 'Cupcakes', is_favorite: false }
+      { name: 'Pina Colada', category: 'Cupcakes', is_favorite: false, image_file: 'PinaColada.jpg' },
+      { name: 'Strawberry Daiquiri', category: 'Cupcakes', is_favorite: false, image_file: 'StrawberryDaiquiri.jpg' },
+      { name: 'Raspberry Lemon Drop', category: 'Cupcakes', is_favorite: false, image_file: 'RaspberryLemonDrop.jpg' },
+      { name: 'White Russian', category: 'Cupcakes', is_favorite: false, image_file: 'WhiteRussian.jpg' },
+      { name: 'Strawberry Shortcake', category: 'Cupcakes', is_favorite: true, image_file: 'StrawberryShortcake.jpg' },
+      { name: "Pancake'n Bacon", category: 'Cupcakes', is_favorite: true, image_file: 'PancakenBacon.jpg' },
+      { name: 'Black Forest', category: 'Cupcakes', is_favorite: false, image_file: 'BlackForest.jpg' },
+      { name: 'Chocolate Peanut Butter Cup', category: 'Cupcakes', is_favorite: false, image_file: 'ChocolatePeanutButterCup.jpg' },
+      { name: 'Blueberry Pancake', category: 'Cupcakes', is_favorite: false, image_file: 'BlueberryPancake.jpg' },
+      { name: 'Luscious Lemonade', category: 'Cupcakes', is_favorite: false, image_file: 'LusciousLemonade.jpg' },
+      { name: "S'mores", category: 'Cupcakes', is_favorite: false, image_file: 'Smores.jpg' },
+      { name: 'Mint Chocolate Chip', category: 'Cupcakes', is_favorite: false, image_file: 'MintChocolateChip.jpg' },
+      { name: 'Pineapple Upside Down', category: 'Cupcakes', is_favorite: false, image_file: 'PineappleUpsideDown.jpg' },
+      { name: 'Banana Split', category: 'Cupcakes', is_favorite: false, image_file: 'BananaSplit.jpg' },
+      { name: 'Vanilla Bean & Toasted Coconut', category: 'Cupcakes', is_favorite: false, image_file: 'VanillaBeanToastedCoconut.jpg' },
+      { name: 'Carrot Cake', category: 'Cupcakes', is_favorite: false, image_file: 'CarrotCake.jpg' },
+      { name: 'Lemon Meringue', category: 'Cupcakes', is_favorite: false, image_file: 'LemonMeringue.jpg' },
+      { name: 'Blueberry Lemonade', category: 'Cupcakes', is_favorite: false, image_file: 'BlueberryLemonade.jpg' },
+      { name: 'Stuffed French Toast', category: 'Cupcakes', is_favorite: false, image_file: 'StuffedFrenchToast.jpg' },
+      { name: 'Red Velvet Cheesecake', category: 'Cupcakes', is_favorite: false, image_file: 'RedVelvetCheesecake.jpg' },
+      { name: 'Boston Cream Pie', category: 'Cupcakes', is_favorite: false, image_file: 'BostonCreamPie.jpg' },
+      { name: 'Chai Tea', category: 'Cupcakes', is_favorite: false, image_file: 'ChaiTea.jpg' },
+      { name: 'Salted Caramel Apple', category: 'Cupcakes', is_favorite: false, image_file: 'SaltedCaramelApple.jpg' },
+      { name: "Apple Pie", category: 'Cupcakes', is_favorite: false, image_file: 'ApplePie.jpg' },
+      { name: 'Chocolate Oreo Explosion', category: 'Cupcakes', is_favorite: false, image_file: 'ChocolateOreo.jpg' },
+      { name: 'Creamy Mango', category: 'Cupcakes', is_favorite: false, image_file: 'CreamyMango.jpg' },
+      { name: 'White Chocolate and Macadamia Nut', category: 'Cupcakes', is_favorite: false, image_file: 'WhiteChocolateMacadamiaNut.jpg' },
+      { name: 'German Chocolate', category: 'Cupcakes', is_favorite: false, image_file: 'GermanChocolate.jpg' },
+      { name: 'Orange', category: 'Cupcakes', is_favorite: false, image_file: 'Orange.jpg' },
     ]
   });
 
@@ -158,81 +144,81 @@
 
   <div ng-controller="HomesController" ng-show="viewName === 'home'" class="home-content">
     <!-- Start of Carousel -->
-      <div id="homeCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <!-- First slide -->
-          <div class="item active lightgray">
-            <div class="carousel-caption">
-              <h3 class="animated bounceInLeft">
-                YOUR NEXT MEETING COULD BE A PARTY
-              </h3>
-              <h3 class="animated bounceInRight">
-                Cupcake Treats Now Available!
-              </h3>
-              <button class="btn btn-primary btn-lg animated zoomInUp">ORDER NOW</button>
-            </div>
-          </div> <!-- /.item -->
-          <!-- Second slide -->
-          <div class="item rose">
-            <div class="carousel-caption">
-              <h3 class="icon-container animated bounceInDown">
-                <span class="glyphicon glyphicon-heart"></span>
-              </h3>
-              <h3 class="animated bounceInUp">
-                Make Any Occasion a Special Occasion
-              </h3>
-              <button class="btn btn-primary btn-lg animated zoomInRight">VISIT NOW</button>
-            </div>
-          </div><!-- /.item -->
-          <!-- Third slide -->
-          <div class="item sand">
-            <div class="carousel-caption">
-              <h3 class="icon-container animated zoomInLeft">
-                <span class="glyphicon glyphicon-glass"></span>
-              </h3>
-              <h3 class="animated flipInX">
-                The best way to celebrate the ones you love!
-              </h3>
-              <button class="btn btn-primary btn-lg animated lightSpeedIn">LEARN MORE</button>
-            </div>
-          </div><!-- /.item -->
-        </div><!-- /.carousel-inner -->
-        <!-- Next Control-->
-        <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        <!-- Previous Control-->
-        <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
+    <div id="homeCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <!-- First slide -->
+        <div class="item active lightgray">
+          <div class="carousel-caption">
+            <h3 class="animated bounceInLeft">
+              YOUR NEXT MEETING COULD BE A PARTY
+            </h3>
+            <h3 class="animated bounceInRight">
+              Cupcake Treats Now Available!
+            </h3>
+            <button class="btn btn-primary btn-lg animated zoomInUp">ORDER NOW</button>
+          </div>
+        </div> <!-- /.item -->
+        <!-- Second slide -->
+        <div class="item rose">
+          <div class="carousel-caption">
+            <h3 class="icon-container animated bounceInDown">
+              <span class="glyphicon glyphicon-heart"></span>
+            </h3>
+            <h3 class="animated bounceInUp">
+              Make Any Occasion a Special Occasion
+            </h3>
+            <button class="btn btn-primary btn-lg animated zoomInRight">VISIT NOW</button>
+          </div>
+        </div><!-- /.item -->
+        <!-- Third slide -->
+        <div class="item sand">
+          <div class="carousel-caption">
+            <h3 class="icon-container animated zoomInLeft">
+              <span class="glyphicon glyphicon-glass"></span>
+            </h3>
+            <h3 class="animated flipInX">
+              The best way to celebrate the ones you love!
+            </h3>
+            <button class="btn btn-primary btn-lg animated lightSpeedIn">LEARN MORE</button>
+          </div>
+        </div><!-- /.item -->
+      </div><!-- /.carousel-inner -->
+      <!-- Next Control-->
+      <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <!-- Previous Control-->
+      <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
 
-      </div>
+    </div>
     <!-- End of Carousel -->
   </div>
 
   <div ng-controller="AboutController" ng-show="viewName === 'about'" class="about container">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-          <img src="img/Baker.jpg" alt="Baker Profile" class="img-responsive" />
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-right">
-          <h1>About CakeKo Gourmet</h1>
-          <p>Owner and Cute Baker, Cake Ko, wanted to bring something different to the cupcake and cake biz by offering desserts that not only looked amazing but taste amazing as well.</p>
-          <p>After a successful 13 year career in corporate America, she was forced to face what a lot of people had to face, job uncertainty and possible lay-offs. She decided to not only have a back up plan but to follow her dreams and left to become a baker, with no formal training.</p>
-          <p>CakeKo Gourmet was established as an online / delivery cupcake business, because it took off soo quickly, she started to run her business out of ButterCup Cafe where Cake Ko was able to get exposure and successfully exploded!</p>
-          <p>Cake Ko was invited to audition for Cupcake Wars, from the Food Network and was on Good Day Sacramento, only to get so much more exposure! CakeKo Gourmet is now a recognized name in the baking world and is known for the BEST cupcakes and cakes around.</p>
-          <p>Only two and a half years later... CakeKo Gourmet storefront opened it's doors February of 2016!! And as they say....and the rest is history!</p>
-        </div>
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <img src="img/Baker.jpg" alt="Baker Profile" class="img-responsive" />
       </div>
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-right">
+        <h1>About CakeKo Gourmet</h1>
+        <p>Owner and Cute Baker, Cake Ko, wanted to bring something different to the cupcake and cake biz by offering desserts that not only looked amazing but taste amazing as well.</p>
+        <p>After a successful 13 year career in corporate America, she was forced to face what a lot of people had to face, job uncertainty and possible lay-offs. She decided to not only have a back up plan but to follow her dreams and left to become a baker, with no formal training.</p>
+        <p>CakeKo Gourmet was established as an online / delivery cupcake business, because it took off soo quickly, she started to run her business out of ButterCup Cafe where Cake Ko was able to get exposure and successfully exploded!</p>
+        <p>Cake Ko was invited to audition for Cupcake Wars, from the Food Network and was on Good Day Sacramento, only to get so much more exposure! CakeKo Gourmet is now a recognized name in the baking world and is known for the BEST cupcakes and cakes around.</p>
+        <p>Only two and a half years later... CakeKo Gourmet storefront opened it's doors February of 2016!! And as they say....and the rest is history!</p>
+      </div>
+    </div>
   </div>
 
   <div ng-controller="MenuController" ng-show="viewName === 'menu'" class="container">
@@ -244,7 +230,19 @@
   </div>
 
   <div ng-controller="ProductsController" ng-show="viewName === 'cupcakes'" class="container">
-    <h1>Cupcakes</h1>
+    <h1>Cupcakes Gallery</h1>
+    <div class="row">
+      <div class='list-group gallery'>
+        <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' ng-repeat="cupcake in Products">
+          <a class="thumbnail fancybox" rel="ligthbox" href="img/cupcakes/{{cupcake.image_file}}">
+            <img class="img-responsive" ng-src="img/cupcakes/{{cupcake.image_file}}" alt="{{cupcake.name}}" />
+            <div class='text-right'>
+              <small class='text-muted'>{{cupcake.name}}</small>
+            </div> <!-- text-right / end -->
+          </a>
+        </div> <!-- col-6 / end -->
+      </div>
+    </div>
   </div>
 
   <div ng-controller="PricesController" ng-show="viewName === 'prices'" class="container">
@@ -263,7 +261,6 @@
     <h1>Press</h1>
   </div>
 
-  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
 </body>
