@@ -74,7 +74,49 @@
 
   cakekoModule.controller("MenuController", function($scope)
   {
+    $scope.Espressos = [
+      { name: 'White Mocha', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Caffé Mocha', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Sassy Caramella', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Caffé Latte', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Flavored Latte', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Chai Tea Latte', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Caramel Macchiato', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Cappuccino', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Hot Chocolate', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Hot Tea', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Americano', small: 3.55, medium: 4.25, large: 4.75 },
+      { name: 'Brewed Coffee', small: 3.55, medium: 4.25, large: 4.75 }
+    ]﻿
 
+    $scope.Drinks = [
+      { name: 'Soda Can', onesize: 1.25 },
+      { name: 'Apple Juice', onesize: 2.00 },
+      { name: 'Milk', onesize: 1.00 },
+      { name: 'Chocolate Milk', onesize: 1.75 },
+      { name: 'Jolly Rancher Sodas', onesize: 1.50 },
+      { name: 'Fruit Smoothies', medium: 3.25, large: 4.25 },
+      { name: 'CakeKo Freeze', medium: 4.25, large: 4.95 },
+    ]
+
+    $scope.Foods = [
+      breakfast: [
+        { name: 'Breakfast Burrito', description: 'Egg, cheese, seasoned potatoes, choice of meat (ham, bacon or sausage) stuffed in a flour tortilla (Grilled)'},
+        { name: 'Breakfast Sandwich', description: 'Egg, cheese, choice of meat (bacon, sausage or ham) on a bagel, croissant or toast'},
+        { name: 'Yogurt Parfait', description: 'Low-fat yogurt topped with berry blend and granola'}
+      ],
+      sandwiches: [
+        { name: 'El Cubano', description: 'Havarti cheese, sliced ham, slow roasted pork, mayo, mustard, pickles and our house-made garlic mojo on a white or wheat roll (Grilled)'},
+        { name: 'The Cali Chick', description: 'Grilled chicken breast, mozzarella cheese, pesto, lettuce, tomato and our house-made garlic mojo on a roll on a white or wheat roll (Grilled)'},
+        { name: 'The CakeKo Club', description: 'Slices of ham, turkey and bacon, mayo, lettuce and tomatoes on white or wheat toast'},
+        { name: 'Grilled Cheese', description: 'Your choice of cheese on white or wheat bread, grilled to perfection'},
+        { name: 'BLT', description: 'Crispy bacon, lettuce, tomatoes and mayo on white or wheat toast'}
+      ]
+      salads: [
+        { name: 'Chinese Chicken Salad', description: 'Sliced grilled chicken breast, chopped almonds and crunchy chow mein noodles on a generous bed of field greens and shredded cabbage, served with our toasted sesame dressing'},
+        { name: 'Garden Salad', description: 'Field greens, cherry tomatoes, cucumbers, croutons and mozzarella cheese, served with choice of dressing'}
+      ]
+    ]
   });
 
   cakekoModule.controller("WeddingsController", function($scope)
