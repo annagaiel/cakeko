@@ -224,6 +224,14 @@ h1 {
 
 .gallery
 {
-    display: inline-block;
-    margin-top: 20px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+h2 {
+  font-family: 'Lobster Two', cursive;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
 }

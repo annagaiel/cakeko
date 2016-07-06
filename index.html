@@ -283,13 +283,37 @@
       </tr>
     </table>
 
-    <h2>Drinks</h2>
-    <h3>Beverages</h3>
-    <div ng-repeat="beverage in Beverages">
-      <strong> {{ beverage.name }}</strong>
-      <p> {{ beverage.onesize | currency }}</p>
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Drinks</h2>
+      <div ng-repeat="beverage in Beverages" class="text-center">
+        <strong> {{ beverage.name }}</strong>
+        <p> {{ beverage.onesize | currency }}</p>
+      </div>
     </div>
 
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Breakfast</h2>
+      <div ng-repeat="breakfast in Foods[0].breakfast">
+        <strong>{{ breakfast.name }}</strong>
+        <p>{{ breakfast.description }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Sandwiches</h2>
+      <div ng-repeat="sandwich in Foods[0].sandwiches">
+        <strong>{{ sandwich.name }}</strong>
+        <p>{{ sandwich.description }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Salads</h2>
+      <div ng-repeat="salad in Foods[0].salads">
+        <strong>{{ salad.name }}</strong>
+        <p>{{ salad.description }}</p>
+      </div>
+    </div>
   </div>
 
   <div ng-controller="WeddingsController" ng-show="viewName === 'weddings'" class="container">
